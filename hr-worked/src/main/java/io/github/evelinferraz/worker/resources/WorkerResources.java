@@ -35,7 +35,7 @@ public class WorkerResources {
 	
 	@GetMapping(value="/{id}")
 	public ResponseEntity<Worker> findById(@PathVariable Long id){
-		/*
+		
 		try {
 			Thread.sleep(3000L);
 		} catch (InterruptedException e) {
@@ -44,7 +44,7 @@ public class WorkerResources {
 	
 		//Imprime no log o número da porta que está rodando o projeto
 		logger.info("PORT ====> "+ env.getProperty("local.server.port"));
-		*/
+		
 		Worker worker = repository.findById(id).get();
 		return ResponseEntity.ok(worker);
 	}	
